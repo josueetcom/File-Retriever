@@ -21,11 +21,11 @@ build:
   ci:
     - gradle assemble
     - gradle test
-    - cp -r app/build/test-results/* shippable/testresults
-  post_ci:
   on_success:
+    - cp -r app/build/test-results/* shippable/testresults
     - echo "success!"
   on_failure:
+    - cp -r app/build/test-results/* shippable/testresults
     - echo "failure"
   cache:
   push:
