@@ -24,7 +24,7 @@ build:
   post_ci:
     - cp -r app/build/test-results/* shippable/testresults
   on_success:
-    - echo "success"
+    - echo "success!"
   on_failure:
     - echo "failure"
   cache:
