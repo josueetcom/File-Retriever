@@ -1,0 +1,30 @@
+language: java
+
+jdk:
+- oraclejdk8
+
+services:
+
+env:
+
+matrix:
+
+build:
+  pre_ci:
+
+  pre_ci_boot:
+    image_name:
+    image_tag:
+    pull:
+    options:
+  
+  ci:
+    - gradle assemble
+    - gradle test
+  post_ci:
+  on_success:
+    - echo "success"
+  on_failure:
+    - echo "failure"
+  cache:
+  push:
