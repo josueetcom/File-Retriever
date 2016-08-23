@@ -19,6 +19,11 @@ build:
     options:
   
   ci:
+    # Because the android sdk isn't installed by default we keep a local copy
+    - tar xzf android-sdk-linux
+    - export ANDROID_HOME='$PWD/android-sdk-linux'
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
     - ./gradlew assemble
     - ./gradlew test
   on_success:
