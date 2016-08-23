@@ -23,6 +23,8 @@ build:
     - curl https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz -o android-sdk-linux.tgz
     - tar xzf android-sdk-linux.tgz
     - export ANDROID_HOME="$PWD/android-sdk-linux"
+    # install android-24 platform
+    - $ANDROID_HOME/tools/android update sdk --no-ui --filter android-24 <<< "y"
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - ./gradlew assemble
