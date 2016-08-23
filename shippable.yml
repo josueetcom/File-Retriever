@@ -19,8 +19,8 @@ build:
     options:
   
   ci:
-    - gradle assemble
-    - gradle test
+    - ./gradlew assemble
+    - ./gradlew test
   on_success:
     - echo "success!"
   on_failure:
