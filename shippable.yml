@@ -19,7 +19,8 @@ build:
     options:
   
   ci:
-    # Because the android sdk isn't installed by default we keep a local copy
+    # Because the android sdk isn't downloaded by default
+    - curl https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz -O android-sdk-linux.tgz
     - tar xzf android-sdk-linux.tgz
     - export ANDROID_HOME='$PWD/android-sdk-linux'
     - mkdir -p shippable/testresults
