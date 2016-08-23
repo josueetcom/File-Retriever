@@ -20,7 +20,7 @@ build:
   
   ci:
     # Because the android sdk isn't installed by default we keep a local copy
-    - tar xzf android-sdk-linux
+    - tar xzf android-sdk-linux.tgz
     - export ANDROID_HOME='$PWD/android-sdk-linux'
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
