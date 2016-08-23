@@ -22,6 +22,7 @@ build:
     - gradle assemble
     - gradle test
   post_ci:
+    - cp -r app/build/test-results/* shippable/testresults
   on_success:
     - echo "success"
   on_failure:
