@@ -32,7 +32,7 @@ build:
     - ls -R shippable
   on_failure:
     - echo "failure"
-    - ls -R shippable
+    - ls -R
   # we want to cache stuff
   cache: true
   cache_dir_list:
