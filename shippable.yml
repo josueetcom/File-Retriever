@@ -30,5 +30,8 @@ build:
     - echo "success!"
   on_failure:
     - echo "failure"
-  cache:
+  # we want to cache stuff
+  cache: true
+  cache_dir_list:
+    - $SHIPPABLE_BUILD_DIR/android-sdk-linux
   push:
