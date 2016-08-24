@@ -2,7 +2,7 @@
 
 # Download Android SDK
 curl https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz -o android-sdk-linux.tgz
-tar xzf android-sdk-linux.tgz $ANDROID_HOME
+tar xzf android-sdk-linux.tgz -f $ANDROID_HOME
 
 function install {
   for package; do
