@@ -28,9 +28,10 @@ android {
 
     testOptions {
         def shippableDir = "${System.getenv('SHIPPABLE_BUILD_DIR')}/shippable/"
-        println shippableDir
-        reportDir = "$shippableDir/testreport"
+//        reportDir = "$shippableDir/testreport"
         resultsDir = "$shippableDir/testresults"
+//        println "Reports DIR: $reportDir"
+        println "Results DIR: $resultsDir"
     }
 }
 

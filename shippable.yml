@@ -23,7 +23,9 @@ build:
     - git clean -n -e 'android-sdk-linux*'
     - ./setup.sh
     - mkdir -p shippable/testresults
+    - mkdir -p shippable/testreport
     - mkdir -p shippable/codecoverage
+    - mkdir -p shippable/somedir
     - ./gradlew assemble
     - ./gradlew test
   on_success:
@@ -33,6 +35,7 @@ build:
   on_failure:
     - echo "failure"
     - ls -R shippable
+    - ls -R shippable/testresults
   # we want to cache stuff
   cache: true
   cache_dir_list:
