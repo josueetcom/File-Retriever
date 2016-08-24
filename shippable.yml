@@ -26,6 +26,9 @@ build:
     - mkdir -p shippable/codecoverage
     - ./gradlew assemble
     - ./gradlew test
+  post_ci:
+    # TODO: See if the tests are there or not
+    - ls -R
   on_success:
     - echo "success!"
   on_failure:
