@@ -35,7 +35,6 @@ build:
   on_failure:
     - echo "failure"
     - ls -R shippable
-    - ls -R shippable/testresults
   # we want to cache stuff
   cache: true
   cache_dir_list:

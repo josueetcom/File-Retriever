@@ -25,12 +25,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-    testOptions {
-        def shippableDir = "${System.getenv('SHIPPABLE_BUILD_DIR')}/shippable/"
-        testR = "$shippableDir/testresults"
-        println "Results DIR: $resultsDir"
-    }
 }
 
 dependencies {
