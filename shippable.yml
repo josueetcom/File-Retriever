@@ -29,7 +29,7 @@ build:
     - ./gradlew test
   post_ci:
     # TODO: See if the tests are there or not
-    - ls -R
+    - ls -R shippable
   on_success:
     - echo "success!"
   on_failure:
