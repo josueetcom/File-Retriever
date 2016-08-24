@@ -6,6 +6,7 @@ function sdk_install {
 }
 
 if [[ ! -d $ANDROID_HOME ]]; then
+  echo "Android SDK not around, downloading..."
   # Download Android SDK if it isn't cached
   curl https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz -o android-sdk-linux.tgz
   tar xzf android-sdk-linux.tgz
