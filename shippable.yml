@@ -21,6 +21,7 @@ build:
   ci:
     # Because the android sdk isn't downloaded by default
     - export ANDROID_HOME="$PWD/android-sdk-linux"
+    - git clean -n -e 'android-sdk-linux*'
     - ./setup.sh
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
