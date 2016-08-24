@@ -6,7 +6,7 @@ jdk:
 services:
 
 env:
-
+  - ANDROID_HOME=$SHIPPABLE_BUILD_DIR/android-sdk-linux
 matrix:
 
 build:
@@ -20,20 +20,19 @@ build:
   
   ci:
     # Because the android sdk isn't downloaded by default
-    - export ANDROID_HOME="$PWD/android-sdk-linux"
     - git clean -n -e 'android-sdk-linux*'
     - ./setup.sh
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - ./gradlew assemble
     - ./gradlew test
-  post_ci:
-    # TODO: See if the tests are there or not
-    - ls -R shippable
   on_success:
     - echo "success!"
+    # TODO: See if the tests are there or not
+    - ls -R shippable
   on_failure:
     - echo "failure"
+    - ls -R shippable
   # we want to cache stuff
   cache: true
   cache_dir_list:
