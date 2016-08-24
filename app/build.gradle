@@ -28,9 +28,7 @@ android {
 
     testOptions {
         def shippableDir = "${System.getenv('SHIPPABLE_BUILD_DIR')}/shippable/"
-//        reportDir = "$shippableDir/testreport"
-        resultsDir = "$shippableDir/testresults"
-//        println "Reports DIR: $reportDir"
+        testR = "$shippableDir/testresults"
         println "Results DIR: $resultsDir"
     }
 }
@@ -46,4 +44,6 @@ tasks.withType(Test) {
     testLogging {
         events  "passed",  "failed"
     }
+    def shippableDir = "${System.getenv('SHIPPABLE_BUILD_DIR')}/shippable/"
+    reports.junitXml.destination = "$shippableDir/testresults"
 }
