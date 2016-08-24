@@ -5,7 +5,7 @@ function sdk_install {
   done
 }
 
-if [[ -d $ANDROID_HOME ]]; then
+if [[ ! -d $ANDROID_HOME ]]; then
   # Download Android SDK if it isn't cached
   curl https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz -o android-sdk-linux.tgz
   tar xzf android-sdk-linux.tgz
